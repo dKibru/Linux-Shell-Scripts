@@ -3,6 +3,15 @@
 alias ddd='sudo desktop-dimmer'
 alias kphpunit='./vendor/bin/phpunit --bootstrap vendor/autoload.php'
 
+function kcpp(){
+  sudo g++ $1
+  ./a.out
+}
+function kccc(){
+  sudo gcc $1
+  ./a.out
+}
+
 function kgeletu(){
     sudo service nginx stop
     klampp start
@@ -25,6 +34,8 @@ function kflutter(){
 
 function klampp(){
 #    echo $1
+    sudo service nginx stop
+    sudo ./etc/init.d/apache2 stop
     cd /opt/lampp
 #    if [ $1 -eq "stop" ]; then
 #        echo "Useradd failed"
@@ -69,6 +80,43 @@ function kpdf(){
     fi
 }
 
+function kconda2(){
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/deqiq/anaconda2/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/deqiq/anaconda2/etc/profile.d/conda.sh" ]; then
+            . "/home/deqiq/anaconda2/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/deqiq/anaconda2/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+}
+
+function kconda(){
+    #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+    export SDKMAN_DIR="/home/deqiq/.sdkman"
+    [[ -s "/home/deqiq/.sdkman/bin/sdkman-init.sh" ]] && source "/home/deqiq/.sdkman/bin/sdkman-init.sh"
+
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/deqiq/anaconda3new/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/deqiq/anaconda3new/etc/profile.d/conda.sh" ]; then
+            . "/home/deqiq/anaconda3new/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/deqiq/anaconda3new/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+}
 
 function kanaconda(){
     # added by Anaconda3 2018.12 installer
