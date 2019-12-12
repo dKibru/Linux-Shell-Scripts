@@ -17,11 +17,11 @@ php -r "unlink('composer-setup.php');"
 
 
 ## php
-sudo apt-get install php7.2-xml
-sudo apt-get install php7.2-gd
-sudo apt-get install php7.2-intl
-sudo apt-get install php7.2-xsl
-sudo apt-get install php7.2-sqlite3
-sudo apt-get install php7.2-zip
-sudo apt-get install php7.2-mbstring
-sudo apt-get install php7.2-mysqli
+sudo apt-get install php7.2-xml 
+php7.2-gd 
+php7.2-intl 
+php7.2-xsl 
+php7.2-sqlite3 
+php7.2-zip 
+php7.2-mbstring 
+php7.2-mysqli 
